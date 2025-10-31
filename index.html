@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Agendamentos</title>
+    <meta name="description" content="Sistema de agendamentos">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6B35"/>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #FF6B35;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FF6B35;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        Carregando Big Agendamentos...
+    </div>
+    
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbzCzF8rRg6hT1T55mmTDDlMTAWG51lRknFCVt8EFE17r02WtaadYLzAkTWpVVa56YhT/exec" 
+        id="appFrame"
+        style="display: none;"
+    ></iframe>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('appFrame').style.display = 'block';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
